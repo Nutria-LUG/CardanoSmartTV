@@ -1,0 +1,133 @@
+\hypertarget{classTelevisionDriverDebug}{\section{Television\+Driver\+Debug Class Reference}
+\label{classTelevisionDriverDebug}\index{Television\+Driver\+Debug@{Television\+Driver\+Debug}}
+}
+
+
+{\ttfamily \#include $<$television\+\_\+driver\+\_\+debug.\+hh$>$}
+
+
+
+Inheritance diagram for Television\+Driver\+Debug\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classTelevisionDriverDebug__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Television\+Driver\+Debug\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classTelevisionDriverDebug__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTelevisionDriverDebug_a6519c487afc26a2fdb9869a9733705fa}{Television\+Driver\+Debug} (std\+::unique\+\_\+ptr$<$ \hyperlink{classTelevisionDriver}{Television\+Driver} $>$ television\+\_\+driver)
+\item 
+\hyperlink{classTelevisionDriverDebug_afd370254cfa8eae311fb85752a385c72}{$\sim$\+Television\+Driver\+Debug} ()
+\item 
+const \hyperlink{structTelevisionStatus}{Television\+Status} \& \hyperlink{classTelevisionDriverDebug_ad23820f9639351e2b222fdb941ee2792}{get\+\_\+video\+\_\+status} () const 
+\item 
+void \hyperlink{classTelevisionDriverDebug_a1f5e16575b48f979a44d81fba14a836e}{power\+\_\+on} ()
+\item 
+void \hyperlink{classTelevisionDriverDebug_aae9ffd499fa9b050e4eadb846b0b7257}{power\+\_\+off} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This television driver is used for debug purpose. It take an other driver, like proxy pattern, to perform the core operations. This is used to make assertion on pre conditions before each operations and post condition after execution of each methods. See Television\+Adapter documentation to know the Contracts to be checked.~\newline
+ N\+O\+T\+E\+: The proxied object is taken as unique\+\_\+ptr and the ownership is moved to this object through std\+::move function. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTelevisionDriverDebug_a6519c487afc26a2fdb9869a9733705fa}{\index{Television\+Driver\+Debug@{Television\+Driver\+Debug}!Television\+Driver\+Debug@{Television\+Driver\+Debug}}
+\index{Television\+Driver\+Debug@{Television\+Driver\+Debug}!Television\+Driver\+Debug@{Television\+Driver\+Debug}}
+\subsubsection[{Television\+Driver\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}Television\+Driver\+Debug\+::\+Television\+Driver\+Debug (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Television\+Driver} $>$}]{television\+\_\+driver}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classTelevisionDriverDebug_a6519c487afc26a2fdb9869a9733705fa}
+Constructor with one parameter. It initialize this adapter using the one passed as parameter to have a proxy pattern behavior.~\newline
+ I\+M\+P\+O\+R\+T\+A\+N\+T\+: It is passed as unique\+\_\+ptr and ownership is moved to this object throug std\+::move function. 
+\begin{DoxyParams}{Parameters}
+{\em television\+\_\+driver} & -\/ Smart pointer to the driver. It must be not null. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTelevisionDriverDebug_afd370254cfa8eae311fb85752a385c72}{\index{Television\+Driver\+Debug@{Television\+Driver\+Debug}!````~Television\+Driver\+Debug@{$\sim$\+Television\+Driver\+Debug}}
+\index{````~Television\+Driver\+Debug@{$\sim$\+Television\+Driver\+Debug}!Television\+Driver\+Debug@{Television\+Driver\+Debug}}
+\subsubsection[{$\sim$\+Television\+Driver\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}Television\+Driver\+Debug\+::$\sim$\+Television\+Driver\+Debug (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTelevisionDriverDebug_afd370254cfa8eae311fb85752a385c72}
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classTelevisionDriverDebug_ad23820f9639351e2b222fdb941ee2792}{\index{Television\+Driver\+Debug@{Television\+Driver\+Debug}!get\+\_\+video\+\_\+status@{get\+\_\+video\+\_\+status}}
+\index{get\+\_\+video\+\_\+status@{get\+\_\+video\+\_\+status}!Television\+Driver\+Debug@{Television\+Driver\+Debug}}
+\subsubsection[{get\+\_\+video\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Television\+Status}\& Television\+Driver\+Debug\+::get\+\_\+video\+\_\+status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTelevisionDriverDebug_ad23820f9639351e2b222fdb941ee2792}
+This method gets the current status of the video. \begin{DoxyReturn}{Returns}
+A struct that describe the status of teh video.
+\end{DoxyReturn}
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+No preconditions. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returned pointer is not N\+U\+L\+L.
+\end{DoxyPostcond}
+ 
+
+Implements \hyperlink{classTelevisionDriver_a5dcdc6c2b9c8bab8471080a44ac19f8e}{Television\+Driver}.
+
+\hypertarget{classTelevisionDriverDebug_aae9ffd499fa9b050e4eadb846b0b7257}{\index{Television\+Driver\+Debug@{Television\+Driver\+Debug}!power\+\_\+off@{power\+\_\+off}}
+\index{power\+\_\+off@{power\+\_\+off}!Television\+Driver\+Debug@{Television\+Driver\+Debug}}
+\subsubsection[{power\+\_\+off}]{\setlength{\rightskip}{0pt plus 5cm}void Television\+Driver\+Debug\+::power\+\_\+off (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTelevisionDriverDebug_aae9ffd499fa9b050e4eadb846b0b7257}
+Power off the television. It must be called if the television is powered on.
+
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+Video must be powered on. See get\+\_\+video\+\_\+status. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Video is powered off, its power\+\_\+status is off.
+\end{DoxyPostcond}
+ 
+
+Implements \hyperlink{classTelevisionDriver_a91298bc5e5c89b2fe2d125f84e111b09}{Television\+Driver}.
+
+\hypertarget{classTelevisionDriverDebug_a1f5e16575b48f979a44d81fba14a836e}{\index{Television\+Driver\+Debug@{Television\+Driver\+Debug}!power\+\_\+on@{power\+\_\+on}}
+\index{power\+\_\+on@{power\+\_\+on}!Television\+Driver\+Debug@{Television\+Driver\+Debug}}
+\subsubsection[{power\+\_\+on}]{\setlength{\rightskip}{0pt plus 5cm}void Television\+Driver\+Debug\+::power\+\_\+on (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTelevisionDriverDebug_a1f5e16575b48f979a44d81fba14a836e}
+Power on the television. It must be called if the television is powered off.
+
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+Video must be powered off. See get\+\_\+video\+\_\+status. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Video is powered on, its power\+\_\+status is on.
+\end{DoxyPostcond}
+ 
+
+Implements \hyperlink{classTelevisionDriver_a24163794dbfdf4273425b8b13cae0676}{Television\+Driver}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/tv\+\_\+driver/\hyperlink{television__driver__debug_8hh}{television\+\_\+driver\+\_\+debug.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\hypertarget{classCecTelevisionConnection}{\section{Cec\+Television\+Connection Class Reference}
+\label{classCecTelevisionConnection}\index{Cec\+Television\+Connection@{Cec\+Television\+Connection}}
+}
+
+
+{\ttfamily \#include $<$cec\+\_\+television\+\_\+connection.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCecTelevisionConnection_a3e57a0de618e90a6feca673524fc0d64}{Cec\+Television\+Connection} (adapter $\ast$target\+\_\+adapter)
+\item 
+\hyperlink{classCecTelevisionConnection_a0688605f07e4d9dd3ed4fad854b41579}{$\sim$\+Cec\+Television\+Connection} ()
+\item 
+void \hyperlink{classCecTelevisionConnection_ab8ff59b20f9bbccfdfa47af33ca0055e}{connect} ()
+\item 
+bool \hyperlink{classCecTelevisionConnection_a4b9798dfad2902b9dd462f9a929db6b5}{is\+\_\+connected} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represent the connection of the cec device to a television that support it. This is used to have R\+A\+I\+I behavior on connection. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCecTelevisionConnection_a3e57a0de618e90a6feca673524fc0d64}{\index{Cec\+Television\+Connection@{Cec\+Television\+Connection}!Cec\+Television\+Connection@{Cec\+Television\+Connection}}
+\index{Cec\+Television\+Connection@{Cec\+Television\+Connection}!Cec\+Television\+Connection@{Cec\+Television\+Connection}}
+\subsubsection[{Cec\+Television\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}Cec\+Television\+Connection\+::\+Cec\+Television\+Connection (
+\begin{DoxyParamCaption}
+\item[{adapter $\ast$}]{target\+\_\+adapter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCecTelevisionConnection_a3e57a0de618e90a6feca673524fc0d64}
+Constructor with one parameter. This initialize the connection through the adapeter passed as parameter. ~\newline
+ Connection is initialize to disconnected state, to perform the connection use the connect method. 
+\begin{DoxyParams}{Parameters}
+{\em target\+\_\+adapter} & -\/ Pointer to C\+E\+C adapter to connect. It must be not N\+U\+L\+L. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCecTelevisionConnection_a0688605f07e4d9dd3ed4fad854b41579}{\index{Cec\+Television\+Connection@{Cec\+Television\+Connection}!````~Cec\+Television\+Connection@{$\sim$\+Cec\+Television\+Connection}}
+\index{````~Cec\+Television\+Connection@{$\sim$\+Cec\+Television\+Connection}!Cec\+Television\+Connection@{Cec\+Television\+Connection}}
+\subsubsection[{$\sim$\+Cec\+Television\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}Cec\+Television\+Connection\+::$\sim$\+Cec\+Television\+Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCecTelevisionConnection_a0688605f07e4d9dd3ed4fad854b41579}
+Destructor. Check if the adapter is connected and release it if needed. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCecTelevisionConnection_ab8ff59b20f9bbccfdfa47af33ca0055e}{\index{Cec\+Television\+Connection@{Cec\+Television\+Connection}!connect@{connect}}
+\index{connect@{connect}!Cec\+Television\+Connection@{Cec\+Television\+Connection}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}void Cec\+Television\+Connection\+::connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCecTelevisionConnection_ab8ff59b20f9bbccfdfa47af33ca0055e}
+Open a connection to the television through the adapter.
+
+=== C\+O\+N\+T\+R\+A\+C\+T === \begin{DoxyPrecond}{Precondition}
+Connection must be closed, is\+\_\+connected must return false. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+No exception thrown. 
+\end{DoxyPostcond}
+\hypertarget{classCecTelevisionConnection_a4b9798dfad2902b9dd462f9a929db6b5}{\index{Cec\+Television\+Connection@{Cec\+Television\+Connection}!is\+\_\+connected@{is\+\_\+connected}}
+\index{is\+\_\+connected@{is\+\_\+connected}!Cec\+Television\+Connection@{Cec\+Television\+Connection}}
+\subsubsection[{is\+\_\+connected}]{\setlength{\rightskip}{0pt plus 5cm}bool Cec\+Television\+Connection\+::is\+\_\+connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCecTelevisionConnection_a4b9798dfad2902b9dd462f9a929db6b5}
+Check if the connection with the television is opened. \begin{DoxyReturn}{Returns}
+True if the connection is open, false otherwise.
+\end{DoxyReturn}
+=== C\+O\+N\+T\+R\+A\+C\+T === \begin{DoxyPrecond}{Precondition}
+No preconditions. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+No exception thrown. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/tv\+\_\+driver/\hyperlink{cec__television__connection_8hh}{cec\+\_\+television\+\_\+connection.\+hh}\end{DoxyCompactItemize}

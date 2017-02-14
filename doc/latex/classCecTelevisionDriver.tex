@@ -1,0 +1,126 @@
+\hypertarget{classCecTelevisionDriver}{\section{Cec\+Television\+Driver Class Reference}
+\label{classCecTelevisionDriver}\index{Cec\+Television\+Driver@{Cec\+Television\+Driver}}
+}
+
+
+{\ttfamily \#include $<$cec\+\_\+television\+\_\+driver.\+hh$>$}
+
+
+
+Inheritance diagram for Cec\+Television\+Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classCecTelevisionDriver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cec\+Television\+Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classCecTelevisionDriver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCecTelevisionDriver_a6fc32515ca7c7dc05e8256c1b5dc15ca}{Cec\+Television\+Driver} ()
+\item 
+\hyperlink{classCecTelevisionDriver_a5d21757c126ad25a5d45686ba76f487a}{$\sim$\+Cec\+Television\+Driver} ()
+\item 
+const \hyperlink{structTelevisionStatus}{Television\+Status} \& \hyperlink{classCecTelevisionDriver_a7951a3e9f71c699b880af51a12a1764d}{get\+\_\+video\+\_\+status} () const 
+\item 
+void \hyperlink{classCecTelevisionDriver_a57d6f70f16b35e54e6ce3423c96f0c18}{power\+\_\+on} ()
+\item 
+void \hyperlink{classCecTelevisionDriver_a5ef7d248edd310444f670499ccf8f765}{power\+\_\+off} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is an adapter used to handle a television through H\+D\+M\+I cable. This use the Lib\+C\+E\+C to perform operations. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCecTelevisionDriver_a6fc32515ca7c7dc05e8256c1b5dc15ca}{\index{Cec\+Television\+Driver@{Cec\+Television\+Driver}!Cec\+Television\+Driver@{Cec\+Television\+Driver}}
+\index{Cec\+Television\+Driver@{Cec\+Television\+Driver}!Cec\+Television\+Driver@{Cec\+Television\+Driver}}
+\subsubsection[{Cec\+Television\+Driver}]{\setlength{\rightskip}{0pt plus 5cm}Cec\+Television\+Driver\+::\+Cec\+Television\+Driver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCecTelevisionDriver_a6fc32515ca7c7dc05e8256c1b5dc15ca}
+Default constructor. Initialize each data and television's connection. \hypertarget{classCecTelevisionDriver_a5d21757c126ad25a5d45686ba76f487a}{\index{Cec\+Television\+Driver@{Cec\+Television\+Driver}!````~Cec\+Television\+Driver@{$\sim$\+Cec\+Television\+Driver}}
+\index{````~Cec\+Television\+Driver@{$\sim$\+Cec\+Television\+Driver}!Cec\+Television\+Driver@{Cec\+Television\+Driver}}
+\subsubsection[{$\sim$\+Cec\+Television\+Driver}]{\setlength{\rightskip}{0pt plus 5cm}Cec\+Television\+Driver\+::$\sim$\+Cec\+Television\+Driver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCecTelevisionDriver_a5d21757c126ad25a5d45686ba76f487a}
+Default destructor. It release used resources. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCecTelevisionDriver_a7951a3e9f71c699b880af51a12a1764d}{\index{Cec\+Television\+Driver@{Cec\+Television\+Driver}!get\+\_\+video\+\_\+status@{get\+\_\+video\+\_\+status}}
+\index{get\+\_\+video\+\_\+status@{get\+\_\+video\+\_\+status}!Cec\+Television\+Driver@{Cec\+Television\+Driver}}
+\subsubsection[{get\+\_\+video\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Television\+Status}\& Cec\+Television\+Driver\+::get\+\_\+video\+\_\+status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCecTelevisionDriver_a7951a3e9f71c699b880af51a12a1764d}
+This method gets the current status of the video. \begin{DoxyReturn}{Returns}
+A struct that describe the status of teh video.
+\end{DoxyReturn}
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+No preconditions. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returned pointer is not N\+U\+L\+L.
+\end{DoxyPostcond}
+ 
+
+Implements \hyperlink{classTelevisionDriver_a5dcdc6c2b9c8bab8471080a44ac19f8e}{Television\+Driver}.
+
+\hypertarget{classCecTelevisionDriver_a5ef7d248edd310444f670499ccf8f765}{\index{Cec\+Television\+Driver@{Cec\+Television\+Driver}!power\+\_\+off@{power\+\_\+off}}
+\index{power\+\_\+off@{power\+\_\+off}!Cec\+Television\+Driver@{Cec\+Television\+Driver}}
+\subsubsection[{power\+\_\+off}]{\setlength{\rightskip}{0pt plus 5cm}void Cec\+Television\+Driver\+::power\+\_\+off (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCecTelevisionDriver_a5ef7d248edd310444f670499ccf8f765}
+Power off the television. It must be called if the television is powered on.
+
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+Video must be powered on. See get\+\_\+video\+\_\+status. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Video is powered off, its power\+\_\+status is off.
+\end{DoxyPostcond}
+ 
+
+Implements \hyperlink{classTelevisionDriver_a91298bc5e5c89b2fe2d125f84e111b09}{Television\+Driver}.
+
+\hypertarget{classCecTelevisionDriver_a57d6f70f16b35e54e6ce3423c96f0c18}{\index{Cec\+Television\+Driver@{Cec\+Television\+Driver}!power\+\_\+on@{power\+\_\+on}}
+\index{power\+\_\+on@{power\+\_\+on}!Cec\+Television\+Driver@{Cec\+Television\+Driver}}
+\subsubsection[{power\+\_\+on}]{\setlength{\rightskip}{0pt plus 5cm}void Cec\+Television\+Driver\+::power\+\_\+on (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCecTelevisionDriver_a57d6f70f16b35e54e6ce3423c96f0c18}
+Power on the television. It must be called if the television is powered off.
+
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+Video must be powered off. See get\+\_\+video\+\_\+status. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Video is powered on, its power\+\_\+status is on.
+\end{DoxyPostcond}
+ 
+
+Implements \hyperlink{classTelevisionDriver_a24163794dbfdf4273425b8b13cae0676}{Television\+Driver}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/tv\+\_\+driver/\hyperlink{cec__television__driver_8hh}{cec\+\_\+television\+\_\+driver.\+hh}\end{DoxyCompactItemize}

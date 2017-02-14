@@ -1,0 +1,116 @@
+\hypertarget{classTelevisionDriver}{\section{Television\+Driver Class Reference}
+\label{classTelevisionDriver}\index{Television\+Driver@{Television\+Driver}}
+}
+
+
+{\ttfamily \#include $<$television\+\_\+driver.\+hh$>$}
+
+
+
+Inheritance diagram for Television\+Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classTelevisionDriver__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTelevisionDriver_ac0af9a24e93a01169ac6d3e3f7863802}{Television\+Driver} ()
+\item 
+virtual \hyperlink{classTelevisionDriver_addb7dec34cf34b135dc9da2ae68e2fe6}{$\sim$\+Television\+Driver} ()
+\item 
+virtual const \hyperlink{structTelevisionStatus}{Television\+Status} \& \hyperlink{classTelevisionDriver_a5dcdc6c2b9c8bab8471080a44ac19f8e}{get\+\_\+video\+\_\+status} () const =0
+\item 
+virtual void \hyperlink{classTelevisionDriver_a24163794dbfdf4273425b8b13cae0676}{power\+\_\+on} ()=0
+\item 
+virtual void \hyperlink{classTelevisionDriver_a91298bc5e5c89b2fe2d125f84e111b09}{power\+\_\+off} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is an abstract class used to represent a generic video. It is a wrapper for libraries used to handle with theme. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTelevisionDriver_ac0af9a24e93a01169ac6d3e3f7863802}{\index{Television\+Driver@{Television\+Driver}!Television\+Driver@{Television\+Driver}}
+\index{Television\+Driver@{Television\+Driver}!Television\+Driver@{Television\+Driver}}
+\subsubsection[{Television\+Driver}]{\setlength{\rightskip}{0pt plus 5cm}Television\+Driver\+::\+Television\+Driver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTelevisionDriver_ac0af9a24e93a01169ac6d3e3f7863802}
+Default constructor. \hypertarget{classTelevisionDriver_addb7dec34cf34b135dc9da2ae68e2fe6}{\index{Television\+Driver@{Television\+Driver}!````~Television\+Driver@{$\sim$\+Television\+Driver}}
+\index{````~Television\+Driver@{$\sim$\+Television\+Driver}!Television\+Driver@{Television\+Driver}}
+\subsubsection[{$\sim$\+Television\+Driver}]{\setlength{\rightskip}{0pt plus 5cm}virtual Television\+Driver\+::$\sim$\+Television\+Driver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTelevisionDriver_addb7dec34cf34b135dc9da2ae68e2fe6}
+Virtual Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classTelevisionDriver_a5dcdc6c2b9c8bab8471080a44ac19f8e}{\index{Television\+Driver@{Television\+Driver}!get\+\_\+video\+\_\+status@{get\+\_\+video\+\_\+status}}
+\index{get\+\_\+video\+\_\+status@{get\+\_\+video\+\_\+status}!Television\+Driver@{Television\+Driver}}
+\subsubsection[{get\+\_\+video\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Television\+Status}\& Television\+Driver\+::get\+\_\+video\+\_\+status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classTelevisionDriver_a5dcdc6c2b9c8bab8471080a44ac19f8e}
+This method gets the current status of the video. \begin{DoxyReturn}{Returns}
+A struct that describe the status of teh video.
+\end{DoxyReturn}
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+No preconditions. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returned pointer is not N\+U\+L\+L. 
+\end{DoxyPostcond}
+
+
+Implemented in \hyperlink{classTelevisionDriverDebug_ad23820f9639351e2b222fdb941ee2792}{Television\+Driver\+Debug}, and \hyperlink{classCecTelevisionDriver_a7951a3e9f71c699b880af51a12a1764d}{Cec\+Television\+Driver}.
+
+\hypertarget{classTelevisionDriver_a91298bc5e5c89b2fe2d125f84e111b09}{\index{Television\+Driver@{Television\+Driver}!power\+\_\+off@{power\+\_\+off}}
+\index{power\+\_\+off@{power\+\_\+off}!Television\+Driver@{Television\+Driver}}
+\subsubsection[{power\+\_\+off}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Television\+Driver\+::power\+\_\+off (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classTelevisionDriver_a91298bc5e5c89b2fe2d125f84e111b09}
+Power off the television. It must be called if the television is powered on.
+
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+Video must be powered on. See get\+\_\+video\+\_\+status. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Video is powered off, its power\+\_\+status is off. 
+\end{DoxyPostcond}
+
+
+Implemented in \hyperlink{classTelevisionDriverDebug_aae9ffd499fa9b050e4eadb846b0b7257}{Television\+Driver\+Debug}, and \hyperlink{classCecTelevisionDriver_a5ef7d248edd310444f670499ccf8f765}{Cec\+Television\+Driver}.
+
+\hypertarget{classTelevisionDriver_a24163794dbfdf4273425b8b13cae0676}{\index{Television\+Driver@{Television\+Driver}!power\+\_\+on@{power\+\_\+on}}
+\index{power\+\_\+on@{power\+\_\+on}!Television\+Driver@{Television\+Driver}}
+\subsubsection[{power\+\_\+on}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Television\+Driver\+::power\+\_\+on (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classTelevisionDriver_a24163794dbfdf4273425b8b13cae0676}
+Power on the television. It must be called if the television is powered off.
+
+== C\+O\+N\+T\+R\+A\+C\+T == \begin{DoxyPrecond}{Precondition}
+Video must be powered off. See get\+\_\+video\+\_\+status. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Video is powered on, its power\+\_\+status is on. 
+\end{DoxyPostcond}
+
+
+Implemented in \hyperlink{classTelevisionDriverDebug_a1f5e16575b48f979a44d81fba14a836e}{Television\+Driver\+Debug}, and \hyperlink{classCecTelevisionDriver_a57d6f70f16b35e54e6ce3423c96f0c18}{Cec\+Television\+Driver}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/tv\+\_\+driver/\hyperlink{television__driver_8hh}{television\+\_\+driver.\+hh}\end{DoxyCompactItemize}

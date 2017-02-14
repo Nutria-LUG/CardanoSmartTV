@@ -1,0 +1,48 @@
+\hypertarget{driver__factory_8hh}{\section{include/driver\+\_\+factory.hh File Reference}
+\label{driver__factory_8hh}\index{include/driver\+\_\+factory.\+hh@{include/driver\+\_\+factory.\+hh}}
+}
+
+
+This file contains the factory function used to create the television driver.  
+
+
+{\ttfamily \#include \char`\"{}./tv\+\_\+driver/television\+\_\+driver.\+hh\char`\"{}}\\*
+Include dependency graph for driver\+\_\+factory.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{driver__factory_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{driver__factory_8hh_a3960ae721ce97d89c42f711cf2b1f2a2}{\#define {\bfseries D\+R\+I\+V\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R\+Y\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+G\+U\+A\+R\+D}~1}\label{driver__factory_8hh_a3960ae721ce97d89c42f711cf2b1f2a2}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTelevisionDriver}{Television\+Driver} $\ast$ \hyperlink{driver__factory_8hh_a87ec6e595e8230b584446fdff67b0db2}{create\+\_\+television\+\_\+driver} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the factory function used to create the television driver. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{driver__factory_8hh_a87ec6e595e8230b584446fdff67b0db2}{\index{driver\+\_\+factory.\+hh@{driver\+\_\+factory.\+hh}!create\+\_\+television\+\_\+driver@{create\+\_\+television\+\_\+driver}}
+\index{create\+\_\+television\+\_\+driver@{create\+\_\+television\+\_\+driver}!driver\+\_\+factory.\+hh@{driver\+\_\+factory.\+hh}}
+\subsubsection[{create\+\_\+television\+\_\+driver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Television\+Driver}$\ast$ create\+\_\+television\+\_\+driver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{driver__factory_8hh_a87ec6e595e8230b584446fdff67b0db2}
+Create a an instance of television driver according to the compiler flag\+: release or debug version according to N\+D\+E\+B\+U\+G flag.~\newline
+ It implements a singleton pattern, so if it called twice, both pointers points to the same object. \begin{DoxyReturn}{Returns}
+A pointer to the television driver. ~\newline
+ I\+M\+P\+O\+R\+T\+A\+N\+T\+: The ownership is satic scope so the requestor must not matter of driver destruction. 
+\end{DoxyReturn}
