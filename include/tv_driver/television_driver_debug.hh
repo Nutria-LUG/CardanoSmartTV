@@ -48,6 +48,8 @@ public:
   /** @inheritdoc */
   void power_off();
 
+  /** @inheritdoc */
+  void go_to(int channel);
 private:
   /** Not implemented. */
   TelevisionDriverDebug();

@@ -1,6 +1,10 @@
 #include<assert.h>
 #include "../include/tv_driver/cec_television_connection.hh"
 
+#ifndef NDEBUG
+#include <iostream>
+#endif
+
 CecTelevisionConnection::
 CecTelevisionConnection(adapter* target_adapter)
   : _adapter(target_adapter),
@@ -21,13 +25,21 @@ void CecTelevisionConnection::connect() {
   assert(OK());
   int number =
     _adapter -> DetectAdapters(descriptor, 10, NULL);
+  
   if(number > 0) {
+#ifndef NDEBUG
+    std::cout << "Connecting ... " << std::endl;
+#endif
     _adapter -> InitVideoStandalone();
     _is_connected =
       _adapter -> Open(descriptor[0].strComName);    
   } else {
     _is_connected = false;
   }
+#ifndef NDEBUG
+    std::cout << "Connected" << std::endl;
+#endif
+  
   assert(OK());
 }
 

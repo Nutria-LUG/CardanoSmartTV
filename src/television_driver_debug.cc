@@ -3,7 +3,6 @@
 #include "../include/tv_driver/television_status.hh"
 #include "../include/tv_driver/television_driver_debug.hh"
 
-
 TelevisionDriverDebug::TelevisionDriverDebug(
     std::unique_ptr<TelevisionDriver> driver)
     : TelevisionDriver(),
@@ -33,6 +32,11 @@ void TelevisionDriverDebug::power_off() {
   assert(OK() && get_video_status().power_status == off);
 }
 
+void TelevisionDriverDebug::go_to(int channel) {
+  _driver -> go_to(channel);
+}
+
 bool TelevisionDriverDebug::OK() const {
   return _driver.get() != NULL;
 }
+

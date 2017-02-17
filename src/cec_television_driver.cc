@@ -1,7 +1,7 @@
 #include <libcec/cec.h>
 #include <memory>
+#include <iostream>
 #include "../include/tv_driver/cec_television_driver.hh"
-
 
 /*
  * This function is used to check if the video is on. This is 
@@ -36,13 +36,16 @@ CecTelevisionDriver::CecTelevisionDriver()
   _config.deviceTypes.Add(
       CEC::CEC_DEVICE_TYPE_PLAYBACK_DEVICE);
   _adapter = (CEC::ICECAdapter*)CECInitialise(&_config);
-  
+          
   /* C++11 has not std::make_unique, so I simulate it creating
    * a temp unique_ptr and move it on _connection. 
    */
   std::unique_ptr<CecTelevisionConnection> tmp(
       new CecTelevisionConnection(_adapter));
   _connection = std::move(tmp);
+  if(!(_connection -> is_connected())) {
+    _connection -> connect();
+  }
   update_status();
 }
 
@@ -61,40 +64,55 @@ CecTelevisionDriver::get_video_status() const {
 }
 
 void CecTelevisionDriver::power_on() {
-    if(!_connection -> is_connected()) {
-      _connection -> connect();
-    }
-    if(_connection -> is_connected()) {
-      bool is_on = _adapter ->
-	PowerOnDevices(CEC::cec_logical_address::CECDEVICE_TV);
-      if(is_on) {
-	_video_status.power_status = on;
-      } else {
-	_video_status.power_status = off;
-      }
-    } else {
-      _video_status.power_status = off;
-    }
+#ifndef NDEBUG
+  std::cout << "Powering on ..." << std::endl;
+#endif
+    bool is_on = _adapter -> PowerOnDevices();
+  if(is_on) {
+    _video_status.power_status = on;
+#ifndef NDEBUG
+  std::cout << "Powered on" << std::endl;
+#endif
+  } else {
+    _video_status.power_status = off;
+#ifndef NDEBUG
+  std::cerr << "Cannot power on" << std::endl;
+#endif
+  }  
 }
 
 void CecTelevisionDriver::power_off() {
-    bool is_off = _adapter -> StandbyDevices(
-	CEC::cec_logical_address::CECDEVICE_TV);
+#ifndef NDEBUG
+  std::cout << "Powering off ..." << std::endl;
+#endif
+    bool is_off = _adapter -> StandbyDevices();
     if(is_off) {
 	_video_status.power_status = off;
+#ifndef NDEBUG
+	std::cout << "Powered off" << std::endl;
+#endif
     }
+#ifndef NDEBUG
+    else{
+      std::cerr << "Cannot power off" << std::endl;
+    }
+#endif
 }
 
 void CecTelevisionDriver::update_status() {
-    if (_connection -> is_connected()) {
-	CEC::cec_logical_address address =
-	    CEC::cec_logical_address::CECDEVICE_TV;
-	CEC::cec_power_status status =
-	    _adapter -> GetDevicePowerStatus(address);
-	if(is_video_on(status)) {
-	    _video_status.power_status = on;
-	} else {
-	    _video_status.power_status = off;
-	}
-    }
+  CEC::cec_logical_address address =
+    CEC::cec_logical_address::CECDEVICE_TV;
+  CEC::cec_power_status status =
+    _adapter -> GetDevicePowerStatus(address);
+  if(is_video_on(status)) {
+    _video_status.power_status = on;
+  } else {
+    _video_status.power_status = off;
+  }
+}
+
+//TO IMPLEMENT
+#include <iostream>
+void CecTelevisionDriver::go_to(int channel) {
+  std::cout << "Change to channel: " << channel;
 }

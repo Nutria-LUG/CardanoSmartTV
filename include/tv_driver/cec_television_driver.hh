@@ -35,6 +35,8 @@ public:
   /** @inheritdoc */
   void power_off();
   
+  /** To Implement */
+  void go_to(int channel);  
 private: 
   /**
    * This method is used to update status of the television. 

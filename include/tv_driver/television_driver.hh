@@ -55,6 +55,11 @@ public:
    * @post Video is powered off, its power_status is off.
    */
   virtual void power_off() = 0;
+
+  /**
+   * This is a new feature to implements. Now do nothing.
+   */
+  virtual void go_to(int channel) = 0;
 };
 
 #endif
